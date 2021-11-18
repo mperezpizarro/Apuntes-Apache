@@ -1,0 +1,54 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(34, 39, 46);
+    color: rgb(73, 151, 73);
+    font-family: 'Roboto Slab', serif;
+}
+main{
+    font-size: 1em;
+}
+li{
+    list-style: none;
+}
+.contenido{
+    max-width: 850px;
+    text-align: justify;
+    padding: 5px;
+}
+@media (max-width: 750px){
+    main{
+        font-size: 0.95em;
+    }
+}
+@media (max-width: 600px){
+    main{
+        font-size: 0.9em;
+    }
+}
+@media (max-width: 450px){
+    h1{
+        font-size: 1.7em;
+    }
+    main{
+        font-size: 0.75em;
+    }
+}
+code{
+    display: inline-block;
+    color: silver;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 10px;
+    background-color: black;
+}
+.directorio{
+    color: rgb(117, 117, 255);
+}
+.carpeta{
+    color: rgb(255, 149, 149);
+}

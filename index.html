@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="style.css">
+        <title>Apuntes de Apache🪶</title>
+    </head>
+    <body>
+        <header>
+            <h1>Apuntes de Apache</h1>
+        </header>
+        <main>
+            <h3><i class="bi bi-arrow-down-circle-fill"></i> Guía de instalación del servicio</h3>
+            <ul>
+                <li>
+                    <i class="bi bi-question-circle-fill"></i> ¿Qué es Apache?
+                    <div class="contenido" id="apache">
+                        <p>
+                            Apache es un servidor web HTTP de código abierto, para plataformas Unix (BSD, GNU/Linux, etc.), 
+                            Microsoft Windows, Macintosh y otras, que implementa el protocolo HTTP/1.1.
+                            es desarrollado y mantenido por una comunidad de usuarios bajo la supervisión de la 
+                            Apache Software Foundation dentro del proyecto HTTP Server (httpd). Apache presenta 
+                            entre otras características altamente configurables, bases de datos de autenticación y
+                            negociado de contenido, pero fue criticado por la falta de una interfaz gráfica que ayude en su configuración. 
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <i class="bi bi-book-fill"></i> Historia de Apache
+                    <div class="contenido" id="apache-historia">
+                        <p>
+                            Desde 1996, Apache es el servidor HTTP más usado. Jugó un papel fundamental en el desarrollo de 
+                            la World Wide Web y alcanzó su máxima cuota de mercado en 2005, siendo el servidor empleado en el 70% 
+                            de los sitios web en el mundo. Sin embargo, ha sufrido un descenso en su cuota de mercado en los últimos años. 
+                            En 2009, se convirtió en el primer servidor web que alojó más de 100 millones de sitios web.
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <i class="bi bi-terminal-fill"></i> Instalación de Apache
+                    <div class="contenido" id="apache-instalacion">
+                        <p class="anotacion">Nota: Solo veremos la instalación para GNU Linux</p>
+                       <ul>
+                           <li>
+                                Debian/Ubuntu
+                                <div class="codigo">
+                                   <code>$ sudo apt install apache2</code>
+                                </div>
+                            </li>
+                           <li>
+                                Fedora/CentOS
+                                <div class="codigo">
+                                    <code>$ sudo yum install httpd</code>
+                                </div>
+                            </li>
+                           <li>
+                                RedHat
+                                <div class="codigo">
+                                    <code>$ sudo yum install httpd</code>
+                                </div>
+                                <div class="codigo">
+                                    <code>$ sudo up2date httpd</code>
+                                </div>
+                            </li>
+                       </ul>
+                    </div>
+                </li>
+            </ul>
+            <h3><i class="bi bi-server"></i> Funciones básicas de Apache</h3>
+            <ul>
+                <li>
+                    <i class="bi bi-bookmark-fill"></i> Introducción
+                    <div class="contenido" id="introduccion">
+                        <p>
+                            Todos los comandos y directorios serán para las distribuciones Debian. En otras distribuciones
+                            esto podría variar. Recuerda que puedes ver el estado del servicio con:
+                        </p>
+                        <div class="codigo">
+                            <code>$ service apache2 status</code>
+                        </div>
+                        <div class="codigo">
+                            <code>$ sudo systemctl status apache2</code>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <i class="bi bi-server"></i> Iniciar Apache
+                    <div class="codigo">
+                        <code>$ service apache2 start</code>
+                    </div>
+                    <div class="codigo">
+                        <code>$ sudo systemctl start apache2</code>
+                    </div>
+                </li>
+                <li>
+                    <i class="bi bi-arrow-clockwise"></i> Reiniciar Apache
+                    <ul>
+                        <li>
+                            <i class="bi bi-x-square-fill"></i> Cerrar conexiones activas
+                            <div class="codigo">
+                                <code>$ service apache2 restart</code>
+                            </div>
+                            <div class="codigo">
+                                <code>$ sudo systemctl restart apache2</code>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="bi bi-check-square-fill"></i> No cerrar conexiones activas
+                            <div class="codigo">
+                                <code>$ service apache2 reload</code>
+                            </div>
+                            <div class="codigo">
+                                <code>$ sudo systemctl reload apache2</code>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <i class="bi bi-power"></i> Parar Apache
+                    <div class="codigo">
+                        <code>$ service apache2 stop</code>
+                    </div>
+                    <div class="codigo">
+                        <code>$ sudo systemctl stop apache2</code>
+                    </div>
+                </li>
+            </ul>
+            <h3><i class="bi bi-folder-fill"></i> Directorios de Apache</h3>
+            <ul>
+                <li>
+                    <i class="bi bi-file-code-fill"></i> Sitios web
+                    <div class="codigo">
+                        <code><span class="directorio">/var/www</span>$ index.html</code>
+                    </div>
+                </li>
+                <li>
+                    <i class="bi bi-archive-fill"></i> Logs
+                    <div class="codigo">
+                        <code><span class="directorio">/var/log/apache2</span>$ ...</code>
+                    </div>
+                </li>
+                <li>
+                    <i class="bi bi-gear-fill"></i> Configuración
+                    <div class="codigo">
+                        <code>
+                            <span class="directorio">/etc/apache2</span>
+                            $ apache2.conf ports.conf <span class="carpeta">envars/ mods/ sites/</span>
+                        </code>
+                    </div>
+                </li>
+            </ul>
+        </main>
+    </body>
+</html>
