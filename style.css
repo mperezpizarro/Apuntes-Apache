@@ -9,6 +9,32 @@ body{
     color: rgb(73, 151, 73);
     font-family: 'Roboto Slab', serif;
 }
+nav{
+    width: 100%;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    background-color: rgb(34, 39, 46);
+}
+nav ul{
+    padding: 20px 0;
+    margin: 0;
+}
+nav ul li{
+    display: inline-block;
+    margin: 0 8px;
+}
+nav ul li a{
+    text-decoration: none;
+    color: rgb(73, 151, 73);
+    transition: 0.2s;
+}
+nav ul li a:hover{
+    color: limegreen;
+}
 main{
     font-size: 1em;
 }
@@ -26,6 +52,19 @@ li{
     }
 }
 @media (max-width: 600px){
+    nav ul{
+        padding: 10px 0;
+        margin: 0;
+    }
+    nav ul li{
+        margin: 0 15px;
+    }
+    nav ul li a{
+        font-size: 1.5em;
+    }
+    nav span{
+        display: none;
+    }
     main{
         font-size: 0.9em;
     }
