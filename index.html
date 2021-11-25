@@ -15,12 +15,20 @@
         <header>
             <h1>Apuntes de Apache</h1>
         </header>
+        <nav>
+            <ul>
+                <li><a href="#instalar">Instalación</a></li>
+                <li><a href="#funciones">Funciones básicas</a></li>
+                <li><a href="#directorios">Directorios</a></li>
+                <li><a href="#directivas">Directivas</a></li>
+            </ul>
+        </nav>
         <main>
-            <h3><i class="bi bi-arrow-down-circle-fill"></i> Guía de instalación del servicio</h3>
+            <h3 id="instalar"><i class="bi bi-arrow-down-circle-fill"></i> Guía de instalación del servicio</h3>
             <ul>
                 <li>
                     <i class="bi bi-question-circle-fill"></i> ¿Qué es Apache?
-                    <div class="contenido" id="apache">
+                    <div class="contenido">
                         <p>
                             Apache es un servidor web HTTP de código abierto, para plataformas Unix (BSD, GNU/Linux, etc.), 
                             Microsoft Windows, Macintosh y otras, que implementa el protocolo HTTP/1.1.
@@ -33,7 +41,7 @@
                 </li>
                 <li>
                     <i class="bi bi-book-fill"></i> Historia de Apache
-                    <div class="contenido" id="apache-historia">
+                    <div class="contenido">
                         <p>
                             Desde 1996, Apache es el servidor HTTP más usado. Jugó un papel fundamental en el desarrollo de 
                             la World Wide Web y alcanzó su máxima cuota de mercado en 2005, siendo el servidor empleado en el 70% 
@@ -44,8 +52,8 @@
                 </li>
                 <li>
                     <i class="bi bi-terminal-fill"></i> Instalación de Apache
-                    <div class="contenido" id="apache-instalacion">
-                        <p class="anotacion">Nota: Solo veremos la instalación para GNU Linux</p>
+                    <div class="contenido">
+                        <p class="anotacion">Nota: Solo veremos la instalación para GNU Linux.</p>
                        <ul>
                            <li>
                                 Debian/Ubuntu
@@ -72,11 +80,11 @@
                     </div>
                 </li>
             </ul>
-            <h3><i class="bi bi-server"></i> Funciones básicas de Apache</h3>
+            <h3 id="funciones"><i class="bi bi-server"></i> Funciones básicas de Apache</h3>
             <ul>
                 <li>
                     <i class="bi bi-bookmark-fill"></i> Introducción
-                    <div class="contenido" id="introduccion">
+                    <div class="contenido">
                         <p>
                             Todos los comandos y directorios serán para las distribuciones Debian. En otras distribuciones
                             esto podría variar. Recuerda que puedes ver el estado del servicio con:
@@ -131,7 +139,7 @@
                     </div>
                 </li>
             </ul>
-            <h3><i class="bi bi-folder-fill"></i> Directorios de Apache</h3>
+            <h3 id="directorios"><i class="bi bi-folder-fill"></i> Directorios de Apache</h3>
             <ul>
                 <li>
                     <i class="bi bi-file-code-fill"></i> Sitios web
@@ -152,6 +160,50 @@
                             <span class="directorio">/etc/apache2</span>
                             $ apache2.conf ports.conf <span class="carpeta">envars/ mods/ sites/</span>
                         </code>
+                    </div>
+                </li>
+            </ul>
+            <h3 id="directivas"><i class="bi bi-file-earmark-text-fill"></i> Directivas de Apache</h3>
+            <ul>
+                <li>
+                    <i class="bi bi-clock-fill"></i> Tiempo de espera
+                    <div class="contenido">
+                        # Gestiona el tiempo (en segundos) que tardará el servidor en enviar/recibir peticiones.
+                        <div class="codigo">
+                            <code>Timeout &lt;tiempo&gt;</code>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <i class="bi bi-file-code-fill"></i> Peticiones simultáneas por conexión
+                    <ul>
+                        <li>
+                            <i class="bi bi-person-fill"></i> Número de peticiones
+                            <div class="contenido">
+                                # Máximo número de peticiones simultáneas que pueden realizarse dentro de una misma conexión.
+                                <div class="codigo">
+                                    <code>MaxKeepAliveRequests &lt;peticiones&gt;</code>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="bi bi-clock-fill"></i> Tiempo de espera
+                            <div class="contenido">
+                                # Gestiona el tiempo (en segundos) que tardará el servidor en enviar/recibir peticiones dentro de una misma conexión.
+                                <div class="codigo">
+                                    <code>KeepAliveTimeout &lt;tiempo&gt;</code>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <i class="bi bi-person-fill"></i> Peticiones simultáneas cliente-servidor
+                    <div class="contenido">
+                        # Máximo número de peticiones simultáneas que pueden realizarse a nivel cliente-servidor.
+                        <div class="codigo">
+                            <code>MaxConnectionsPerChild &lt;conexiones&gt;</code>
+                        </div>
                     </div>
                 </li>
             </ul>
