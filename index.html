@@ -17,10 +17,12 @@
         </header>
         <nav>
             <ul>
-                <li><a href="#instalar"><i class="bi bi-arrow-down-circle-fill"></i><span> Instalación</span></a></li>
-                <li><a href="#funciones"><i class="bi bi-server"></i><span> Funciones básicas</span></a></li>
-                <li><a href="#directorios"><i class="bi bi-folder-fill"></i><span> Directorios</span></a></li>
-                <li><a href="#directivas"><i class="bi bi-file-earmark-text-fill"></i><span> Directivas</span></a></li>
+                <li><a href="#instalar"><i class="bi bi-arrow-down-circle-fill"></i> Instalación</a></li>
+                <li><a href="#funciones"><i class="bi bi-server"></i> Funciones básicas</a></li>
+                <li><a href="#directorios"><i class="bi bi-folder-fill"></i> Directorios</a></li>
+                <li><a href="#directivas"><i class="bi bi-file-earmark-text-fill"></i> Directivas Apache</a></li>
+                <li><a href="#directivas-basicas"><i class="bi bi-file-earmark-binary-fill"></i> Directivas básicas</a></li>
+                <li><a href="#directivas-bloque"><i class="bi bi-file-earmark-code-fill"></i> Directivas bloque</a></li>
             </ul>
         </nav>
         <main>
@@ -163,49 +165,62 @@
                     </div>
                 </li>
             </ul>
-            <h3 id="directivas"><i class="bi bi-file-earmark-text-fill"></i> Directivas de Apache</h3>
+            <h3 id="directivas" title="/etc/apache2/apache2.conf"><i class="bi bi-file-earmark-text-fill"></i> Directivas de Apache</h3>
             <ul>
                 <li>
-                    <i class="bi bi-clock-fill"></i> Tiempo de espera
-                    <div class="contenido">
-                        # Gestiona el tiempo (en segundos) que tardará el servidor en enviar/recibir peticiones.
-                        <div class="codigo">
-                            <code>Timeout &lt;tiempo&gt;</code>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <i class="bi bi-file-code-fill"></i> Peticiones simultáneas por conexión
-                    <ul>
-                        <li>
-                            <i class="bi bi-person-fill"></i> Número de peticiones
-                            <div class="contenido">
+                    <div class="codigo"></div>
+                        <code>
+                            <span class="comentario">
+                                # Gestiona el tiempo (en segundos) que tardará el servidor en enviar/recibir peticiones.
+                            </span><br/>
+                            Timeout &lt;tiempo&gt;<br/><br/>
+                            <span class="comentario">
                                 # Máximo número de peticiones simultáneas que pueden realizarse dentro de una misma conexión.
-                                <div class="codigo">
-                                    <code>MaxKeepAliveRequests &lt;peticiones&gt;</code>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="bi bi-clock-fill"></i> Tiempo de espera
-                            <div class="contenido">
+                            </span><br/>
+                            MaxKeepAliveRequests &lt;peticiones&gt;<br/><br/>
+                            <span class="comentario">
                                 # Gestiona el tiempo (en segundos) que tardará el servidor en enviar/recibir peticiones dentro de una misma conexión.
-                                <div class="codigo">
-                                    <code>KeepAliveTimeout &lt;tiempo&gt;</code>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <i class="bi bi-person-fill"></i> Peticiones simultáneas cliente-servidor
-                    <div class="contenido">
-                        # Máximo número de peticiones simultáneas que pueden realizarse a nivel cliente-servidor.
-                        <div class="codigo">
-                            <code>MaxConnectionsPerChild &lt;conexiones&gt;</code>
-                        </div>
+                            </span><br/>
+                            KeepAliveTimeout &lt;tiempo&gt;<br/><br/>
+                            <span class="comentario">
+                                # Máximo número de peticiones simultáneas que pueden realizarse a nivel cliente-servidor.
+                            </span><br/>
+                            MaxConnectionsPerChild &lt;conexiones&gt;<br/><br/>
+                        </code>
                     </div>
                 </li>
+            </ul>
+            <h3 id="directivas-basicas"><i class="bi bi-file-earmark-binary-fill"></i> Directivas básicas</h3>
+            <ul>
+                <li>
+                    <div class="codigo"></div>
+                        <code>
+                            <span class="comentario">
+                                # Nombre del servidor (Se vincula con DNS).
+                            </span><br/>
+                            ServerName www.ejemplo.net<br/><br/>
+                            <span class="comentario">
+                                # Directorio de los ficheros de configuración de Apache.
+                            </span><br/>
+                            ServerRoot /etc/apache2<br/><br/>
+                            <span class="comentario">
+                                # eMail del administrador donde mandar informes de error del servidor.
+                            </span><br/>
+                            ServerAdmin correo@ejemplo.com<br/><br/>
+                            <span class="comentario">
+                                # Directorio de las páginas web.
+                            </span><br/>
+                            DocumentRoot /var/www/html (Ruta por defecto)<br/><br/>
+                            <span class="comentario">
+                                # Faltan más por añadir.
+                            </span><br/>
+                        </code>
+                    </div>
+                </li>
+            </ul>
+            <h3 id="directivas-bloque"><i class="bi bi-file-earmark-code-fill"></i> Directivas de bloque</h3>
+            <ul>
+                <li></li>
             </ul>
         </main>
     </body>

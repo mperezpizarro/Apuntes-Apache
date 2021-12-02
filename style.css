@@ -13,11 +13,12 @@ nav{
     width: 100%;
     position: sticky;
     position: -webkit-sticky;
+    text-align: center;
     top: 0;
-    display: flex;
-    justify-content: center;
     margin-bottom: 20px;
     background-color: rgb(34, 39, 46);
+    overflow-x: auto;
+    white-space: nowrap;
 }
 nav ul{
     padding: 20px 0;
@@ -59,12 +60,6 @@ li{
     nav ul li{
         margin: 0 15px;
     }
-    nav ul li a{
-        font-size: 1.5em;
-    }
-    nav span{
-        display: none;
-    }
     main{
         font-size: 0.9em;
     }
@@ -90,4 +85,7 @@ code{
 }
 .carpeta{
     color: rgb(255, 149, 149);
+}
+.comentario{
+    color: rgb(114, 159, 241);
 }
